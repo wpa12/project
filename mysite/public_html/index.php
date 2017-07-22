@@ -5,6 +5,7 @@ echo "hello ";
 <html>
 <head>
 	<title>Wayne Anstey</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 
@@ -14,6 +15,6 @@ echo "hello ";
 		<div><aside></aside></div>
 		<div></div>
 	</div>
-	
+
 </body>
 </html>
