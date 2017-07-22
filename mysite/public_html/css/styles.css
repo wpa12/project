@@ -1,3 +1,7 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+
 /* GLOBAL STYLES */
 
 body {
@@ -11,9 +15,12 @@ div.container {
 }
 
 /* HEADER */
-h1 {
+header h1 {
 	font-weight:200;
+	font-family: 'Roboto Slab', serif;
 }
+
+header 
 /* CONTENT */
 
 /* NAVIGATION */
