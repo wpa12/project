@@ -10,7 +10,7 @@ echo "hello ";
 <body>
 
 	<div>
-		<div><header></header></div>
+		<div><header><h1>This is the end!</h1></header></div>
 		<div><nav></nav></div>
 		<div><aside></aside></div>
 		<div></div>
