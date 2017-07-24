@@ -8,19 +8,8 @@ body {
 	font-family: Arial, Helvetica;
 }
 
-div.container {
-	width: 80%;
-	margin: 0 auto;
-	background:pink;
-}
-
 /* HEADER */
-header h1 {
-	font-weight:200;
-	font-family: 'Roboto Slab', serif;
-}
 
-header 
 /* CONTENT */
 
 /* NAVIGATION */
