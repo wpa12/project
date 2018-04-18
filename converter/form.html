@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Converter</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--
+	<script type="text/javascript" src="./script.js"></script>
+	-->
+	<script>
+		$(document).ready(function(){
+			  submit = $('#submit');
+
+			
+			submit.on('click', function(event) 
+			{
+				//preventing default submitting of the form.
+				event.preventDefault();
+
+				//Assigning the variables to each html element via ID selectors
+		        var post = $("#post");
+		         var put = $('#put');
+		         var del = $('#del');
+			    var code = $('#code');
+			    var rate = $('#rate');
+				var response = $('#response');
+
+
+		    if(!post.is(':checked') && !put.is(':checked') && !del.is(':checked'))
+		    {
+			  	alert("Please select a method");
+			}
+			  	var url = 'currPost.php?code='+code.val()+'&rate='+rate.val();
+
+			  	//response.val(url);
+
+			  	if(post.is(":checked"))
+			  	{
+
+					$.ajax({
+						url: './currPost.php?code='+code.val()+'&rate='+rate.val(),
+						type: "GET",
+						dataType: "text",
+						data: {code: code.val(), rate: rate.val()},
+						success: function(data){
+							response.val(data);
+						}, 
+
+						fail: function (data) {
+							response.val("data");
+						}
+					});
+			  	}
+			  	else if(put.is(":checked"))
+				{
+
+					$.ajax({
+						url: './currPut.php?code='+code.val()+'&rate='+rate.val(),
+						type: "GET",
+						dataType: "text",
+						data: {code: code.val(), rate: rate.val()},
+						success: function(data){
+							response.val("success");
+						}, 
+
+						fail: function (data) {
+							response.val("failed");
+						}
+					});
+				}
+				else if(del.is(":checked"))
+				{
+
+					$.ajax({
+						url: './currDel.php?code='+code.val(),
+						type: "GET",
+						dataType: "text",
+						data: {code: code.val(), rate: rate.val()},
+						success: function(data){
+							response.val("success");
+						}, 
+
+						fail: function (data) {
+							response.val("failed");
+						}
+					});
+				}
+
+			});
+
+
+
+		});
+	</script>
+</head>
+<body>
+
+	<div id="wrapper" class="container">
+		<div class="form-group col-md-8">
+			
+			<fieldset class="input-group">
+				<legend>Currency Converter</legend>
+				<form id="form">
+					<h5>Method:</h5>
+					
+					<input type="radio" name="action" id="post" class="input-sm">
+					<label for="post">Post</label>
+					<input type="radio" name="action" id="put" class="input-sm">
+					<label for="put">Put</label>
+					<input type="radio" name="action" id="del" class="input-sm">
+					<label for="del">Delete</label>
+					<div class="form-group">
+					<input type="text" name="code" placeholder="Currency Code" class="col-md-12" id="code"><br>
+					<input type="text" name="name" placeholder="Currency Name" class="col-md-12" id="name"><br>
+					<input type="text" name="rate" placeholder="Rate (£=1)" class="col-md-12" id="rate"><br>
+					<input type="text" name="country" 
+					id="country" placeholder="Countries"  class="col-md-12">
+					</div>
+					<div>
+						<button name="submit" value="Convert" id="submit" class="btn-primary btn-lg col-md-12">Convert</button>
+					</div>
+				</form>
+			</fieldset>
+
+			<div class="message">
+				<p>Response Message:</p>
+
+				<div class="container col-md-12">
+					
+						<textarea class="row col-md-12" id="response">
+							
+						</textarea>
+						
+				<div>
+			</div>
+
+
+		</div>
+	</div>
+
+</body>
+</html>
