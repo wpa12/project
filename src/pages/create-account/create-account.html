@@ -1,0 +1,64 @@
+<!--
+    Created By: Wayne Anstey
+    Student ID: 14015750
+    Description: This code defines the layout and the elements 
+                 for the Create account page in the application
+-->
+<ion-header>
+
+  <ion-navbar color="primary" >
+    <ion-title>Register an account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+      <ion-input type="text" placeholder="Forename(s)" ></ion-input>
+
+  </ion-item>
+
+  
+  <ion-item>
+      <ion-input type="text" placeholder="Surname"></ion-input>
+
+  </ion-item>
+
+
+  <ion-item>
+      <ion-input type="email" placeholder="Email Address"></ion-input>
+  </ion-item>
+
+  <label for="dob">Date of Birth:</label>
+  <ion-item>
+      
+      <ion-input type="date" name="dob"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-input type="password" placeholder="Password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-input type="password" placeholder="Retype Password"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+  <label ion-label>Gender:</label>
+  <select ion-select>
+   <option value="Male">Male</option>
+   <option value="Female">Female</option>
+   <option value="Other">Other</option>
+ </select>
+</ion-item>
+ 
+ <ion-item>
+    <button ion-button>
+        Register
+      </button>
+ </ion-item>
+  
+</ion-content>
